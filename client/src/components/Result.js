@@ -1,17 +1,28 @@
 import React from "react";
 import Button from "./Button";
 
-function Result() {
+function Result(props) {
 
-  //props from api and for buttons
+  let book = {
+    title: props.item.volumeInfo.title,
+    authors: props.item.volumeInfo.authors,
+    description: props.item.volumeInfo.description,
+    image: props.item.volumeInfo.imageLinks.thumbnail,
+    link: props.item.volumeInfo.canonicalVolumeLink
+  }
+
+  let alist;
+
+  book.authors.map(author => alist += `${author}, `);
 
   return (
     <div className="card">
-      <img src="..." className="card-img-top" alt="..." />
+      <img src={book.image} className="card-img-top" alt={book.title} />
       <div className="card-body">
-        <h5 className="card-title">Card title</h5>
-        <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <Button />
+        <h5 className="card-title">{book.title}</h5>
+        <p className="card-text">Author: {alist}</p>
+        <p className="card-text">{book.description}</p>
+        <Button link={book.link} />
         <Button />
       </div>
     </div>
