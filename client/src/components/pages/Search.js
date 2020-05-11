@@ -6,7 +6,7 @@ import API from "../../util/API";
 
 class Search extends Component {
   state = {
-    result: {},
+    result: [],
     search: ""
   };
 

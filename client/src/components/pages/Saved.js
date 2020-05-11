@@ -5,7 +5,7 @@ import API from "../../util/API";
 
 class Saved extends Component {
   state = {
-    result: {}
+    result: []
   };
 
   componentDidMount() {
@@ -27,9 +27,9 @@ class Saved extends Component {
   render() {
     return (
       <Container>
-        {this.state.result.map(item => (
+        {/* {this.state.result.map(item => (
           <Result item={item} />
-        ))}
+        ))} */}
       </Container>
     );
   }

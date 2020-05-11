@@ -8,9 +8,10 @@ function Container(props) {
   return (
     <div>
       {props.text}
-      {props.items.map(item => (
+      {props.items ? (props.items.map(item => (
         <Result item={item} />
-      ))}
+      ))) : (<p>No Results</p>)
+      }
     </div>
   );
 }
