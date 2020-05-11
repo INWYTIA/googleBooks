@@ -1,7 +1,7 @@
 import React from "react";
 import Button from "./Button";
 
-function SearchBar() {
+function SearchBar(props) {
 
   //onchange listener and props for button
 
@@ -12,9 +12,9 @@ function SearchBar() {
         <div className="input-group-prepend">
           <span className="input-group-text" id="inputGroup-sizing-default">Book</span>
         </div>
-        <input type="text" className="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" />
+        <input type="text" className="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" onChange={props.handleInputChange} />
       </div>
-      <Button />
+      <Button handleSubmit={props.handleSubmit} text="Search" />
     </div>
   );
 }

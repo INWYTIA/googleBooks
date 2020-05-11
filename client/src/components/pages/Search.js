@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Component } from "react";
 import Container from "../Container";
 import Result from "../Result";
 import SearchBar from "../SearchBar";
@@ -45,11 +45,11 @@ class Search extends Component {
   render() {
     return (
       <div>
-        <SearchBar />
-        <Container>
-          {this.state.result.map(item => (
+        <SearchBar handleInputChange={this.handleInputChange} handleFormSubmit={this.handleFormSubmit}/>
+        <Container items={this.state.result} text="Search Results">
+          {/* {this.state.result.map(item => (
             <Result item={item} />
-          ))}
+          ))} */}
         </Container>
       </div>
     );

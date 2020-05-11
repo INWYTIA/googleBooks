@@ -1,4 +1,5 @@
 import React from "react";
+import Result from "./Result"
 
 function Container(props) {
 
@@ -7,7 +8,9 @@ function Container(props) {
   return (
     <div>
       {props.text}
-      {props.children}
+      {props.items.map(item => (
+        <Result item={item} />
+      ))}
     </div>
   );
 }

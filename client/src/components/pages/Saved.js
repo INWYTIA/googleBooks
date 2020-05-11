@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Component } from "react";
 import Container from "../Container";
 import Result from "../Result";
 import API from "../../util/API";
