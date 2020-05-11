@@ -1,11 +1,12 @@
 import React from "react";
 
-function Container() {
+function Container(props) {
 
   //props including text content
 
   return (
     <div>
+      {props.text}
       {props.children}
     </div>
   );
