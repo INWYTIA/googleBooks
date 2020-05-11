@@ -29,12 +29,25 @@ class Search extends Component {
     this.searchBooks(this.state.search);
   };
 
+  handleSave = event => {
+    const book = {
+      title: event.target.title,
+      authors: event.target.authors,
+      description: event.target.description,
+      image: event.target.image,
+      link: event.target.link
+    }
+    API.save(book)
+      .then()
+      .catch(err => console.log(err));
+  };
+
   render() {
     return (
       <div>
         <SearchBar />
         <Container>
-          {props.map(item => (
+          {this.state.result.map(item => (
             <Result item={item} />
           ))}
         </Container>
