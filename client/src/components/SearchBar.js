@@ -12,9 +12,9 @@ function SearchBar(props) {
         <div className="input-group-prepend">
           <span className="input-group-text" id="inputGroup-sizing-default">Book</span>
         </div>
-        <input type="text" className="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" onChange={props.handleInputChange} />
+        <input type="text" className="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" name="search" onChange={props.handleInputChange} />
       </div>
-      <Button handleSubmit={props.handleSubmit} text="Search" />
+      <Button handleFormSubmit={props.handleFormSubmit} text="Search" />
     </div>
   );
 }

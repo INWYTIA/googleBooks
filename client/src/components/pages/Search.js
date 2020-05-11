@@ -12,7 +12,7 @@ class Search extends Component {
 
   searchBooks = query => {
     API.search(query)
-      .then(res => this.setState({ result: res.data }))
+      .then(res => this.setState({ result: res.items }))
       .catch(err => console.log(err));
   };
 
@@ -25,6 +25,7 @@ class Search extends Component {
   };
 
   handleFormSubmit = event => {
+    console.log("clicked");
     event.preventDefault();
     this.searchBooks(this.state.search);
   };
