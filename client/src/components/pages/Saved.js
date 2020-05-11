@@ -1,14 +1,13 @@
 import React from "react";
 import Container from "../Container";
 import Result from "../Result";
+import API from "../../util/API";
 
 class Saved extends Component {
   state = {
-    result: {},
-    search: ""
+    result: {}
   };
 
-  // When this component mounts, search for the movie "The Matrix"
   componentDidMount() {
     this.searchSaved();
   }
@@ -19,10 +18,16 @@ class Saved extends Component {
       .catch(err => console.log(err));
   };
 
+  handleDelete = id => {
+    API.delete(id)
+      .then(res => this.searchSaved())
+      .catch(err => console.log(err));
+  }
+
   render() {
     return (
       <Container>
-        {props.map(item => (
+        {this.state.result.map(item => (
           <Result item={item} />
         ))}
       </Container>

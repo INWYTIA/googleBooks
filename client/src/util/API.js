@@ -8,5 +8,11 @@ export default {
   },
   load: function() {
     return axios.get("/api/books");
+  },
+  save: function(data) {
+    return axios.post("/api/books", data);
+  },
+  delete: function(id) {
+    return axios.delete(`/api/books/${id}`);
   }
 };
