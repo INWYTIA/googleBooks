@@ -3,13 +3,11 @@ import Result from "./Result"
 
 function Container(props) {
 
-  //props including text content
-
   return (
     <div>
       {props.text}
       {props.items.map(item => (
-        <Result item={item} />
+        <Result item={item} handleSave={props.handleSave} />
       ))}
     </div>
   );

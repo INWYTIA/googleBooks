@@ -50,7 +50,7 @@ class Search extends Component {
     return (
       <div>
         <SearchBar handleInputChange={this.handleInputChange} handleFormSubmit={this.handleFormSubmit}/>
-        <Container items={this.state.result} text="Search Results">
+        <Container items={this.state.result} text="Search Results" handleSave={this.handleSave}>
           {/* {this.state.result.map(item => (
             <Result item={item} />
           ))} */}

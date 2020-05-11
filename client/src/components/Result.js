@@ -23,7 +23,7 @@ function Result(props) {
         <p className="card-text">Author: {alist}</p>
         <p className="card-text">{book.description}</p>
         <Button link={book.link} />
-        <Button />
+        <Button handleSave={props.handleSave} />
       </div>
     </div>
   );
