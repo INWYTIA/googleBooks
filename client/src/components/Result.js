@@ -1,6 +1,9 @@
 import React from "react";
 
 function Result() {
+
+  //props from api and for buttons
+
   return (
     <div className="card">
       <img src="..." className="card-img-top" alt="..." />
